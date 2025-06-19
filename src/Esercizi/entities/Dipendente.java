@@ -4,7 +4,9 @@ import Esercizi.entities.enums.Dipartimento;
 
 import java.util.Random;
 
-public abstract class Dipendente {
+//ESERCIZIO 3 - implemento nella classe Dipendente l'interfaccia CheckIn
+
+public abstract class Dipendente implements CheckIn {
 
     protected static final double pagaOra = 15.0;
     //ATTRIBUTI
@@ -50,7 +52,13 @@ public abstract class Dipendente {
         this.dipartimento = dipartimento;
     }
 
-    //ESERCIZIO2.metodo astratto per calcolare lo stipendio
+    //ESERCIZIO 2 - metodo astratto per calcolare lo stipendio
     public abstract double calcStipendio();
 
+    //ESERCIZIO 3 - valorizzo il metodo ereditato dall'interfaccia
+    //RICORDATI DI METTERE @Override - stai sovrascrivendo a tutti gli effetti un metodo ereditato da un livello superiore
+    @Override
+    public void checkIn() {
+        System.out.println("Dipendente " + getMatricola() + " ha timbrato il cartellino in ingresso");
+    }
 }

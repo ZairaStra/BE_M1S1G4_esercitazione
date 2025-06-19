@@ -1,7 +1,4 @@
-import Esercizi.entities.DIpendentePartTime;
-import Esercizi.entities.Dipendente;
-import Esercizi.entities.DipendenteFullTime;
-import Esercizi.entities.Dirigente;
+import Esercizi.entities.*;
 import Esercizi.entities.enums.Dipartimento;
 
 
@@ -23,7 +20,20 @@ public class Main {
         //CREO L'ARRAY IN CUI INSERIRLI
         Dipendente[] dipendenti = {d1, d2, d3};
 
-        //CICLO PER STAMPATRE LE MATRICOLE
+        //ESERCIZIO 3 - creo i volontari
+        Volontario v1 = new Volontario("Marco", 19, "Studente");
+        Volontario v2 = new Volontario("Gloria", 28, "Biotecnologa");
+        Volontario v3 = new Volontario("Elisabetta", 26, "Soccoritrice");
+
+        //CREO L'ARRAY MISTO IN CUI INSERIRLI
+        CheckIn[] operatori = {d1, d2, d3, v1, v2, v3};
+
+        //CICLO PER EFFETTUARE CHECKIN
+        for (CheckIn operatore : operatori) {
+            operatore.checkIn();
+        }
+
+        //ESERCIZIO 2 - CICLO PER STAMPATRE LE MATRICOLE
         for (int i = 0; i < dipendenti.length; i++) {
 
             //ESERCIZIO 2 - calcolo l'ammontare dello stipendio del singolo oggetto nell'array
