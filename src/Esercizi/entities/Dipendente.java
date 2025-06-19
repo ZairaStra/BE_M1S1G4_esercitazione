@@ -4,18 +4,23 @@ import Esercizi.entities.enums.Dipartimento;
 
 import java.util.Random;
 
-public class Dipendente {
+public abstract class Dipendente {
 
+    protected static final double pagaOra = 15.0;
     //ATTRIBUTI
     private final int matricola;
-    private double stipendio;
+    //ESERCIZIO2 - commento lo stipendio per poterlo calcolare
+    // private double stipendio;
+
+    //ESERCIZIO2 - per calcolare coerentemente i vari stipendi, stabilisco la paga oraria che userò poi nelle classi
+    //uso protected così possono agevolmente usarla le classi che estendono la superclasse ma non si può modificare nel main
     private Dipartimento dipartimento;
 
     //COSTRUTTORE
-    public Dipendente(double stipendio, Dipartimento dipartimento) {
+    public Dipendente(Dipartimento dipartimento) {
         Random rndm = new Random();
         this.matricola = rndm.nextInt(100000);
-        this.stipendio = stipendio;
+        //this.stipendio = stipendio;
         this.dipartimento = dipartimento;
     }
 
@@ -29,9 +34,9 @@ public class Dipendente {
     }
 
     //stipendio
-    public double getStipendio() {
-        return stipendio;
-    }
+//    public double getStipendio() {
+//        return stipendio;
+//    }
 
     //dipartimento
     public Dipartimento getDipartimento() {
@@ -44,5 +49,8 @@ public class Dipendente {
     public void setDipartimento(Dipartimento dipartimento) {
         this.dipartimento = dipartimento;
     }
+
+    //ESERCIZIO2.metodo astratto per calcolare lo stipendio
+    public abstract double calcStipendio();
 
 }
