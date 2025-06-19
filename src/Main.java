@@ -23,7 +23,7 @@ public class Main {
         //ESERCIZIO 3 - creo i volontari
         Volontario v1 = new Volontario("Marco", 19, "Studente");
         Volontario v2 = new Volontario("Gloria", 28, "Biotecnologa");
-        Volontario v3 = new Volontario("Elisabetta", 26, "Soccoritrice");
+        Volontario v3 = new Volontario("Elisabetta", 26, "Soccorritrice");
 
         //CREO L'ARRAY MISTO IN CUI INSERIRLI
         CheckIn[] operatori = {d1, d2, d3, v1, v2, v3};
